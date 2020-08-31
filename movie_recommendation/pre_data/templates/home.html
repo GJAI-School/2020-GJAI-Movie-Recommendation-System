@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>예아 - 영화를 추천해드립니다</title>
+
+  <link href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css" rel='stylesheet' type='text/css'>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="css/landing-page.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="//unpkg.com/bootstrap@4/dist/css/bootstrap.min.css">
+<script src='//unpkg.com/jquery@3/dist/jquery.min.js'></script>
+<script src='//unpkg.com/popper.js@1/dist/umd/popper.min.js'></script>
+<script src='//unpkg.com/bootstrap@4/dist/js/bootstrap.min.js'></script>
+
+<!-- %^&$#$%^&*%$#$%^&*%$#$%^&^% -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+<script src="//code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
+
+
+  
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<!-- 부가적인 테마 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <!-- Custom fonts for this template -->
+ 
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'home.css' %}" rel="stylesheet">
+ 
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  {% comment %} <nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#"></a>
+    </div>
+  </nav> {% endcomment %}
+
+  <!-- Masthead -->
+  <header class="masthead text-white text-center">
+    <div class="masthead"></div>
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <h1 class="mb-5"> 영화를 검색하세요! </h1>
+        </div>
+        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+          <form action="{% url 'result' %}" method='POST'>
+            {% csrf_token %}
+            <div class="form-row">
+
+                    <input type="text" class="form-control form-control-lg" placeholder="원하는 카테고리를 고르시오. (title, genre, director, actors)" name='data'>
+                    <input type="text" class="form-control form-control-lg" placeholder="카테고리 구분은 공백, 세부정보입력은 공백x " name='data2'>
+
+                <button type="submit" class="btn btn-block btn-lg btn-primary">영화찾기</button>
+            </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Icons Grid -->
+  
+
+  <!-- Image Showcases -->
+  <section class="showcase">
+    <div class="container-fluid p-0">
+      <div class="row no-gutters sebin1">
+        
+        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('./img/bg-masthead.jpg');"></div>
+        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+          <h2 class='name1'>이윤환</h2>
+          <p class="lead mb-0">여러분 코딩하지마세요 정신건강에 해롭습니다... <br>더 좋은 직업, 더 좋은 직장 많은거 같아요... <br>하지만 하고싶다면 열심히 합시다.<br> 1일 1 commit!! 싸랑해용</p>
+        </div>
+      </div>
+      <div class="row no-gutters sebin2">
+        <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/bg-showcase-2.jpg');"></div>
+        <div class="col-lg-6 my-auto showcase-text">
+          <h2 class='name2'>유세빈</h2>
+          <p class="lead mb-0">크롤링도 노가다.. 모델도 노가다.. css도 노논노오가다..</p>
+        </div>
+      </div>
+      <!-- %5555555555555555555555555555% -->
+      <div class="row no-gutters sebin1">
+        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-1.jpg');"></div>
+        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+          <h2 class='name1'>서예지</h2>
+          <p class="lead mb-0">어찌어찌 끝나버렸다~~~~~~!!!!!~~~!!!!!! <br> 끝은 또다른 시작 으아아아아앙 </p>
+        </div>
+      </div>
+      <div class="row no-gutters sebin2">
+        <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/bg-showcase-2.jpg');"></div>
+        <div class="col-lg-6 my-auto showcase-text">
+          <h2 class='name2'>김혜란</h2>
+          <p class="lead mb-0">Do not dwell in the past, do not dream  of the future, concentrate the mind on the present moment.</p>
+        </div>
+      </div>  
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  
+
+  <!-- Call to Action -->
+  
+  <!-- Footer -->
+  <footer class="footer bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+          <ul class="list-inline mb-2">
+            <li class="list-inline-item">
+              <a href="#">About</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Contact</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Terms of Use</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Privacy Policy</a>
+            </li>
+          </ul>
+          <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2020. All Rights Reserved.</p>
+        </div>
+        <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fab fa-facebook fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fab fa-twitter-square fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fab fa-instagram fa-2x fa-fw"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <!-- <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css" rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type='text/css' href="{% static 'result.css' %}" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="for_center">
+        <div class="page_top">
+            <h1> 검색 결과 </h1>
+        </div>
+        <div class="for_center">
+            <div class="card_container">
+                <a href="/1/{{ client.place }}">{{ client.place }}</a>
+                {% for movie in data.itertuples %}
+                    <div class="card">
+                        <div><a style="text-decoration:none; color: rgb(41, 59, 139); font-weight: 600;" href={{ link }}{{ movie.movie_id }}>{{ movie.title }}</a></div>
+                        <div class="a">
+                            <div>평점 : {{movie.star}} </div>
+                            <div>등급 : {{movie.movie_rating}}</div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <button type="button"><a href='{% url 'home' %}'> 뒤로가기 </button>
+        </div>
+    </div>
+</body>
+</html>
+
+
+        {% comment %} <ui>
+        <a href="/1/{{ client.place }}">{{ client.place }}</a>
+        {% for movie in data.itertuples %}
+            <li><a href={{ link }}{{ movie.movie_id }}>{{ movie.title }} </a>{{movie.star}} {{movie.movie_rating}} </li><br/>
+        {% endfor %}
+        </ui>
+        <br/> 
+        <a href='{% url 'home' %}'>뒤로가기</a> {% endcomment %}
+

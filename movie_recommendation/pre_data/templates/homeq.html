@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Landing Page - Start Bootstrap Theme</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- 부가적인 테마 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'home.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'home' %}">영화추천 홈페이지</a>
+    </div>
+  </nav>
+
+  <!-- Masthead -->
+  <div class="container">
+  <header class="masthead text-white text-center">
+    <div class="overlay"></div>
+    <!-- <div class="container"> -->
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <h1 class="mb-5">자신이 좋아하는 영화를 입력하세요!!<br>우리가 찾아드립니다</h1>
+        </div>
+        <div class="category" style="align-content:center;">
+            <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+                <form action="{% url 'result' %}" method='POST'>
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div class="col-12 col-md-9 mb-2 mb-md-0">
+                            <input type="text" class="form-control form-control-lg" placeholder="원하는 카테고리를 고르시오. (title, genre, director, actors)" name='data'>
+                            <input type="text" class="form-control form-control-lg" placeholder="카테고리 구분은 공백, 세부정보입력은 공백x " name='data2'>
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <button type="submit" class="btn btn-block btn-lg btn-primary">유사한 영화찾기</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+  </header>
+
+  <!-- Icons Grid -->
+  <section class="features-icons bg-light text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="card_name">
+            <h3>팀이름</h3>
+            <p class="lead mb-0">요를리히<br></p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card_name">
+            <h3>팀원</h3>
+            <p class="lead mb-0">이윤환, 유세빈</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card_name">
+            <h3>팀원</h3>
+            <p class="lead mb-0">서예지, 김혜란</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
